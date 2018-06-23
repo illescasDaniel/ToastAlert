@@ -7,8 +7,13 @@ This is made using an AlertController (without inheritance) without any buttons 
 ### Usage
 
 ```swift
-ToastAlert.present(message: "Message sent", withLength: .short, in: self)
-// Alternative
-ToastAlert().makeWith(message: "An error ocurred", length: .long).present(in: self)
+ToastAlert.present(message: "Hello", withLength: .short, in: self)
+
+// Powerful alternative        
+ToastAlert
+    .makeWith(message: "Look!", length: .init(timeInterval: .milliseconds(780)))
+    .present(in: self, onCompletion: {
+        print("presented")
+    })
 ```
 
